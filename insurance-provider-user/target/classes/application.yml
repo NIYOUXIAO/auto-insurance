@@ -1,0 +1,31 @@
+#商品服务提供者的服务端口
+server:
+  port: 8001
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/autoinsurance?autoReconnect=true&useSSL=false&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  application:
+    ###应用程序服务名称
+    name: cloud-provider-users
+  cloud:
+    ###开始配置consul的服务注册
+    consul:
+      #consul服务器的主机地址
+      host: localhost
+      #consul服务器的ip地址
+      port: 8500
+      discovery:
+        #服务主机名称
+        #hostname: 127.0.0.1
+        #服务的名称
+        service-name: ${spring.application.name}
+        #是否需要注册
+        register: true
+mybatis:
+    type-aliases-package: com.xw.entity
+    mapper-locations: classpath:mapper/*.xml       # mapper映射文件

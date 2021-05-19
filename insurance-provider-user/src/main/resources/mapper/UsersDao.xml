@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yyds.dao.UsersDao">
+
+<!--    <resultMap type="com.yyds.entity.Users" id="UsersMap">-->
+<!--        <result property="userid" column="userid" jdbcType="INTEGER"/>-->
+<!--        <result property="username" column="username" jdbcType="VARCHAR"/>-->
+<!--        <result property="userpassword" column="userpassword" jdbcType="VARCHAR"/>-->
+<!--    </resultMap>-->
+
+    <select id="selectUser" parameterType="String" resultType="com.yyds.entity.Users">
+        select
+          userid, username, userpassword
+        from autoinsurance.users   where  username=#{username} and userpassword=#{userpassword}
+    </select>
+</mapper>
+
