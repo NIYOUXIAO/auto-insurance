@@ -11,8 +11,8 @@
     <modules>
 <!--        <module>cloud-api</module>-->
         <module>cloud-api</module>
-        <module>insurance-user</module>
-        <module>user-login</module>
+        <module>insurance-provider-user</module>
+        <module>user-login-consumer</module>
     </modules>
     <dependencyManagement>
         <dependencies>

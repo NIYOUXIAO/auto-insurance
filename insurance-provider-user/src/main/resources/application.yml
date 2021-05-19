@@ -27,5 +27,5 @@ spring:
         #是否需要注册
         register: true
 mybatis:
-    type-aliases-package: com.xw.entity
+    type-aliases-package: com.yyds.entity
     mapper-locations: classpath:mapper/*.xml       # mapper映射文件

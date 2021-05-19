@@ -12,9 +12,5 @@
         <module name="insurance-provider-user" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="insurance-provider-user" target="1.8" />
-      <module name="user-login-consumer" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
