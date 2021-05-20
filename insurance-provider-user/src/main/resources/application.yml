@@ -4,11 +4,11 @@ server:
 
 spring:
   datasource:
-    username: root
-    password: 123456
     url: jdbc:mysql://localhost:3306/autoinsurance?autoReconnect=true&useSSL=false&characterEncoding=utf-8
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password:
   application:
     ###应用程序服务名称
     name: cloud-provider-users
