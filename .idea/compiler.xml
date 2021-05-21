@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-api" />
+        <module name="insurance-provider-menus" />
         <module name="user-login-consumer" />
         <module name="insurance-provider-user" />
       </profile>
