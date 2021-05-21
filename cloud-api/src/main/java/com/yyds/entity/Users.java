@@ -1,6 +1,7 @@
 package com.yyds.entity;
 
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 /**
  * (Users)实体类
