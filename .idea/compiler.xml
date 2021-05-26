@@ -7,10 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cloud-api" />
-        <module name="insurance-provider-menus" />
-        <module name="user-login-consumer" />
         <module name="insurance-provider-user" />
+        <module name="insurance-provider-accident" />
+        <module name="insurance-provider-menus" />
+        <module name="cloud-api" />
+        <module name="accident-consumer" />
+        <module name="menus-consumer" />
+        <module name="user-login-consumer" />
       </profile>
     </annotationProcessing>
   </component>

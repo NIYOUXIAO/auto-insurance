@@ -3,11 +3,13 @@ package com.yyds;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableDiscoveryClient //开启注册中心发现，让注册中心发现并扫描到该服务
-public class  UserApp{
+@EnableFeignClients
+public class MenusApp9003 {
+
     public static void main(String[] args) {
-        SpringApplication.run(UserApp.class,args);
+        SpringApplication.run(MenusApp9003.class,args);
     }
 }

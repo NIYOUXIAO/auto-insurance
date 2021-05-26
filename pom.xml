@@ -14,6 +14,9 @@
         <module>insurance-provider-user</module>
         <module>user-login-consumer</module>
         <module>insurance-provider-menus</module>
+        <module>menus-consumer</module>
+        <module>insurance-provider-accident</module>
+        <module>accident-consumer</module>
     </modules>
     <dependencyManagement>
         <dependencies>

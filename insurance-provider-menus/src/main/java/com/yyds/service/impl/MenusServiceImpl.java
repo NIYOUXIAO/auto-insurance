@@ -19,14 +19,20 @@ import java.util.List;
 @Service("menusService")
 public class MenusServiceImpl implements MenusService {
 
-    @Autowired
+    @Resource
     MenusDao menusDao;
     @Override
     public List<Menus> selectMenusById(int uid) {
         List<Menus> menus = menusDao.selectMenusById(uid);
+        List<Menus> list = new ArrayList<Menus>();
         for (Menus menu:menus) {
-            menu.setMenus(menusDao.selectMenusByfid(menu.getMid()));
+            if(menu.getFid()==0){
+                list.add(menu);
+            }
         }
-        return menus;
+        for (Menus menu:list){
+            list.get(0).setMenus(menusDao.selectMenusByfid(menu.getMid()));
+        }
+        return list;
     }
 }

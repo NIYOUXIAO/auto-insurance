@@ -11,7 +11,7 @@ import java.util.List;
  * @since 2021-05-21 10:37:46
  */
 @Data
-public class Menus{
+public class Menus {
     private static final long serialVersionUID = -40133057446162943L;
 
     private Integer mid;
@@ -25,5 +25,6 @@ public class Menus{
     private Integer fid;
 
     private List<Menus> menus;
+
 
 }

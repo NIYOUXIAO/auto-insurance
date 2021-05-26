@@ -1,17 +1,17 @@
 #商品服务提供者的服务端口
 server:
-  port: 8001
+  port: 8003
 
 spring:
   datasource:
+    username: root
+    password: 123456
     url: jdbc:mysql://localhost:3306/autoinsurance?autoReconnect=true&useSSL=false&characterEncoding=utf-8
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    username: root
-    password: 123456
   application:
     ###应用程序服务名称
-    name: cloud-provider-users
+    name: cloud-provider-accident
   cloud:
     ###开始配置consul的服务注册
     consul:
