@@ -1,6 +1,6 @@
 #商品服务提供者的服务端口
 server:
-  port: 6001
+  port: 6002
 
 spring:
   datasource:
@@ -11,7 +11,7 @@ spring:
     password:
   application:
     ###应用程序服务名称
-    name: cloud-provider-users
+    name: cloud-provider-user2
   cloud:
     ###开始配置consul的服务注册
     consul:

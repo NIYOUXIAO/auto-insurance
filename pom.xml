@@ -13,6 +13,10 @@
         <module>cloud-api</module>
         <module>insurance-provider-user</module>
         <module>user-login-consumer</module>
+        <module>client-customer</module>
+        <module>insurance-client-customer</module>
+        <module>insurance-warranty-customer</module>
+        <module>warranty-customer</module>
     </modules>
     <dependencyManagement>
         <dependencies>

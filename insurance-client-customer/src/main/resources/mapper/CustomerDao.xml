@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yyds.dao.CustomerDao">
+
+<!--    <resultMap type="com.yyds.entity.Users" id="UsersMap">-->
+<!--        <result property="userid" column="userid" jdbcType="INTEGER"/>-->
+<!--        <result property="username" column="username" jdbcType="VARCHAR"/>-->
+<!--        <result property="userpassword" column="userpassword" jdbcType="VARCHAR"/>-->
+<!--    </resultMap>-->
+
+    <select id="selectcustomer" parameterType="String" resultType="com.yyds.entity.Policyholders">
+        select * from policyholders_info;
+    </select>
+
+    <select id="selectcustomername" parameterType="String" resultType="com.yyds.entity.Policyholders">
+        select * from policyholders_info;
+        <where>
+            <if test="policyholdersName!=null">
+                policyholdersName like "%#{policyholdersName}%"
+            </if>
+            <if test="credenId!=null">
+                and credenId like "%#{credenId}%"
+            </if>
+        </where>
+    </select>
+
+    <select id="selectRecognizee" parameterType="String" resultType="com.yyds.entity.Recognizee">
+        select * from recognizee_info;
+    </select>
+
+    <select id="selectrecognizeename" parameterType="String" resultType="com.yyds.entity.Recognizee">
+        select * from recognizee_info;
+        <where>
+            <if test="policyholdersName!=null">
+                recognizeeName=#{recognizeeName}
+            </if>
+            <if test="credenId!=null">
+                credentialsId=#{credentialsId}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addPolicyholders" parameterType="Policyholders">
+      insert into policyholders_info(policyholdersId,policyholdersName,sex,credentialsType,credenId,telephone,address) VALUES(default,#{policyholdersName},
+      #{sex},#{credentialsType},#{credenId},#{telephone},#{address});
+   </insert>
+
+    <insert id="addRecognizee" parameterType="Recognizee">
+      insert into recognizee_info(recognizeeId,recognizeeName,sex,credentialsType,credentialsId,telephone,address,policyholdersName,bank,bankAccount,driverId
+      ) VALUES(default,#{recognizeeName},#{sex},#{credentialsType},#{credentialsId},#{telephone},#{address},#{policyholdersName},default,#{bankAccount},#{driverId});
+   </insert>
+
+    <update id="updatePolicyholders" parameterType="Policyholders">
+      update policyholders_info set policyholdersName=#{policyholdersName},sex=#{sex},
+      credentialsType=#{credentialsType},credenId=#{credenId},telephone=#{telephone},
+      address=#{address} where policyholdersId=#{policyholdersId}
+   </update>
+
+    <update id="updateRecognizee" parameterType="Recognizee">
+      update recognizee_info set recognizeeName=#{recognizeeName},sex=#{sex},policyholdersName=#{policyholdersName},
+      credentialsType=#{credentialsType},credentialsId=#{credentialsId},telephone=#{telephone},
+      address=#{address},bankAccount=#{bankAccount},driverId=#{driverId} where recognizeeId=#{recognizeeId}
+   </update>
+
+    <delete id="detelePolicyholders" parameterType="Policyholders">
+      delete from policyholders_info where policyholdersId=#{policyholdersId}
+   </delete>
+
+    <delete id="deteleRecognizee" parameterType="Recognizee">
+      delete from recognizee_info where recognizeeId=#{recognizeeId}
+   </delete>
+</mapper>
+
