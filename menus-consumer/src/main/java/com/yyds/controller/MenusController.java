@@ -1,21 +1,24 @@
 package com.yyds.controller;
-import com.yyds.entity.Users;
-import com.yyds.service.UserClientService;
+
+import com.yyds.entity.Menus;
+import com.yyds.service.MenusClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8888")
-@RequestMapping("/getUser")
-public class UserController {
+@RequestMapping("/menus")
+public class MenusController {
     @Autowired
-    UserClientService userClientService;
-    @RequestMapping("/Ulogin/{username}/{userpassword}")
-    public Users userLogin(@PathVariable String username , @PathVariable String  userpassword){
+    MenusClientService menusClientService;
 
-        return userClientService.userLogin(username,userpassword);
+    @RequestMapping("/getMenus/{uid}")
+    public List<Menus> getMenus(@PathVariable int uid){
+
+        return  menusClientService.getMenus(uid);
     }
 }

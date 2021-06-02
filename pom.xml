@@ -17,6 +17,10 @@
         <module>insurance-client-customer</module>
         <module>insurance-warranty-customer</module>
         <module>warranty-customer</module>
+        <module>insurance-provider-menus</module>
+        <module>menus-consumer</module>
+        <module>insurance-provider-accident</module>
+        <module>accident-consumer</module>
     </modules>
     <dependencyManagement>
         <dependencies>

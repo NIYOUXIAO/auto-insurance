@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yyds.dao.ReportedInfoDao">
+
+    <resultMap type="com.yyds.entity.ReportedInfo" id="ReportedInfoMap">
+        <result property="reportedNumber" column="reported_number" jdbcType="INTEGER"/>
+        <result property="reportedTime" column="reported_time" jdbcType="TIMESTAMP"/>
+        <result property="caseTime" column="case_time" jdbcType="TIMESTAMP"/>
+        <result property="dangerTime" column="danger_time" jdbcType="TIMESTAMP"/>
+        <result property="narrowlyLocation" column="narrowly_location" jdbcType="VARCHAR"/>
+        <result property="city" column="city" jdbcType="VARCHAR"/>
+        <result property="county" column="county" jdbcType="VARCHAR"/>
+        <result property="road" column="road" jdbcType="VARCHAR"/>
+        <result property="dangerAreaType" column="danger_area_type" jdbcType="VARCHAR"/>
+        <result property="dangerPass" column="danger_pass" jdbcType="VARCHAR"/>
+        <result property="dangerCause" column="danger_cause" jdbcType="VARCHAR"/>
+        <result property="informants" column="informants" jdbcType="VARCHAR"/>
+        <result property="driver" column="driver" jdbcType="VARCHAR"/>
+        <result property="driverMob" column="driver_mob" jdbcType="VARCHAR"/>
+        <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
+        <result property="caseState" column="case_state" jdbcType="INTEGER"/>
+        <result property="warrantyNumber" column="warranty_number" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="ReportedInfoMap">
+        select
+        reported_number, reported_time, case_time, danger_time, narrowly_location, city, county, road, danger_area_type,
+        danger_pass, danger_cause, informants, driver, driver_mob, end_time, case_state
+        from autoinsurance.reported_info
+        <where>
+            <if test="reportedNumber != null">
+                and reported_number = #{reportedNumber}
+            </if>
+            <if test="reportedTime != null">
+                and reported_time = #{reportedTime}
+            </if>
+            <if test="caseTime != null">
+                and case_time = #{caseTime}
+            </if>
+            <if test="dangerTime != null">
+                and danger_time = #{dangerTime}
+            </if>
+            <if test="narrowlyLocation != null and narrowlyLocation != ''">
+                and narrowly_location = #{narrowlyLocation}
+            </if>
+            <if test="city != null and city != ''">
+                and city = #{city}
+            </if>
+            <if test="county != null and county != ''">
+                and county = #{county}
+            </if>
+            <if test="road != null and road != ''">
+                and road = #{road}
+            </if>
+            <if test="dangerAreaType != null and dangerAreaType != ''">
+                and danger_area_type = #{dangerAreaType}
+            </if>
+            <if test="dangerPass != null and dangerPass != ''">
+                and danger_pass = #{dangerPass}
+            </if>
+            <if test="dangerCause != null and dangerCause != ''">
+                and danger_cause = #{dangerCause}
+            </if>
+            <if test="informants != null and informants != ''">
+                and informants = #{informants}
+            </if>
+            <if test="driver != null and driver != ''">
+                and driver = #{driver}
+            </if>
+            <if test="driverMob != null and driverMob != ''">
+                and driver_mob = #{driverMob}
+            </if>
+            <if test="endTime != null">
+                and end_time = #{endTime}
+            </if>
+            <if test="caseState != null">
+                and case_state = #{caseState}
+            </if>
+        </where>
+    </select>
+    <!--新增所有列-->
+    <insert id="addReportedInfo" >
+       insert into reported_info
+       values (null,#{reportedTime}, #{caseTime}, #{dangerTime}, #{narrowlyLocation}, #{city}, #{county}, #{road}, #{dangerAreaType}, #{dangerPass}, #{dangerCause}, #{informants}, #{driver}, #{driverMob}, #{endTime}, #{caseState},#{warrantyNumber})
+    </insert>
+</mapper>
+
