@@ -7,15 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="insurance-client-customer" />
-        <module name="client-customer" />
         <module name="insurance-provider-user" />
-        <module name="insurance-provider-menus" />
+        <module name="client-customer" />
         <module name="cloud-api" />
+        <module name="insurance-provider-menus" />
+        <module name="customer" />
+        <module name="user-login-consumer" />
         <module name="accident-consumer" />
         <module name="warranty-customer" />
+        <module name="insurance-client-customer" />
         <module name="menus-consumer" />
-        <module name="user-login-consumer" />
         <module name="insurance-warranty-customer" />
         <module name="insurance-provider-accident" />
       </profile>

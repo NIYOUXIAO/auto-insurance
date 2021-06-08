@@ -25,4 +25,9 @@ public class UsersServiceImpl implements UsersService {
     public Users selectUser(String username,String userpassword) {
         return usersDao.selectUser(username,userpassword);
     }
+
+    @Override
+    public List<Users> selectUserAll() {
+        return usersDao.selectUserAll();
+    }
 }

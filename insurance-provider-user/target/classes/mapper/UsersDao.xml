@@ -13,5 +13,8 @@
           userid, username, userpassword
         from autoinsurance.users   where  username=#{username} and userpassword=#{userpassword}
     </select>
+    <select id="selectUserAll" resultType="com.yyds.entity.Users">
+        select * from users
+    </select>
 </mapper>
 

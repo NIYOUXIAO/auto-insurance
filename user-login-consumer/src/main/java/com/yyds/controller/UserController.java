@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:8888")
 @RequestMapping("/getUser")
@@ -17,5 +19,10 @@ public class UserController {
     public Users userLogin(@PathVariable String username , @PathVariable String  userpassword){
 
         return userClientService.userLogin(username,userpassword);
+    }
+    @RequestMapping("/getAll")
+    public List<Users>  selectUserAll(){
+
+        return userClientService.selectUserAll();
     }
 }

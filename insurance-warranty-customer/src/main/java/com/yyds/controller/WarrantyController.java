@@ -18,4 +18,9 @@ public class WarrantyController {
     public List<Warranty> selectwarranty(){
         return warrantyService.selectwarranty();
     }
+
+    @RequestMapping("/getBywarrantyNumber")
+    public Warranty getBywarrantyNumber(String warrantyNumber){
+        return warrantyService.selectByWarrantyNumber(warrantyNumber);
+    }
 }

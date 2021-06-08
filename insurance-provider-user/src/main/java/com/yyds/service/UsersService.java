@@ -17,5 +17,5 @@ public interface UsersService {
      */
     Users  selectUser(String username,String userpassword);
 
-
+    List<Users> selectUserAll();
 }

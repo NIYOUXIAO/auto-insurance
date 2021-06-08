@@ -1,13 +1,9 @@
 package com.yyds.controller;
 
-import com.yyds.entity.Policyholders;
 import com.yyds.entity.Warranty;
-import com.yyds.service.CustomerClientService;
 import com.yyds.service.WarrantyClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +17,10 @@ public class WarrantyController {
     @RequestMapping("/selectAll3")
     List<Warranty> selectwarranty(){
         return warrantyClientService.selectwarranty();
+    }
+
+    @RequestMapping("/getBywarrantyNumber/{warrantyNumber}")
+    Warranty getBywarrantyNumber(@PathVariable String warrantyNumber){
+        return warrantyClientService.getBywarrantyNumber(warrantyNumber);
     }
 }

@@ -11,5 +11,9 @@
     <select id="selectwarranty" parameterType="String" resultType="com.yyds.entity.Warranty">
         select * from warranty_info;
     </select>
+
+    <select id="selectByWarrantyNumber" resultType="com.yyds.entity.Warranty">
+        select * from warranty_info where warrantyNumber =#{warrantyNumber}
+    </select>
 </mapper>
 

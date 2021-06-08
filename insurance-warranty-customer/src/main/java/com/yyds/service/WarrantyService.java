@@ -10,4 +10,6 @@ public interface WarrantyService {
      *查询保单信息
      */
     List<Warranty> selectwarranty();
+
+    Warranty selectByWarrantyNumber(String warrantyNumber);
 }

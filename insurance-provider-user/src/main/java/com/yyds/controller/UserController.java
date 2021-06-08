@@ -5,6 +5,8 @@ import com.yyds.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -14,5 +16,10 @@ public class UserController {
      public Users Userlogin(String username, String userpassword){
          return usersService.selectUser(username,userpassword);
      }
+
+    @RequestMapping("/getAll")
+    public List<Users> selectUserAll(){
+        return usersService.selectUserAll();
+    }
 
 }
