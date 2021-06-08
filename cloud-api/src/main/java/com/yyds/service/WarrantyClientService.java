@@ -19,4 +19,9 @@ public interface WarrantyClientService {
 
     @RequestMapping("/getBywarrantyNumber")
      Warranty getBywarrantyNumber(@RequestParam("warrantyNumber")  String warrantyNumber);
+    @RequestMapping("/addwarranty")
+    int addWarranty(Warranty warranty);
+
+    @RequestMapping("/updatewarranty")
+    int updateWarranty(Warranty warranty);
 }

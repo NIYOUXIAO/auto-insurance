@@ -12,8 +12,20 @@
         select * from warranty_info;
     </select>
 
+<<<<<<< HEAD
     <select id="selectByWarrantyNumber" resultType="com.yyds.entity.Warranty">
         select * from warranty_info where warrantyNumber =#{warrantyNumber}
     </select>
+=======
+    <insert id="addWarranty" parameterType="Warranty">
+      insert into warranty_info(warrantyNumber,recognizee,permissionDate,paymentDate,premiumTotal,warrantyType,insuranceBeginDate,insuranceEndDate,premiumSum,indemnifyMax,warrantyState,coverAgeNumber,engineNumber,frameNumber,makeNumber,licenseNumber,carColor,motorType,mintedDate,customersSum,sailNumber,carOwnername,vpDollar,placemanLength,mileage)
+      VALUES(#{warrantyNumber},#{recognizee},#{permissionDate},#{paymentDate},#{premiumTotal},#{warrantyType},#{insuranceBeginDate},#{insuranceEndDate},#{premiumSum},#{indemnifyMax},#{warrantyState},#{coverAgeNumber},#{engineNumber},#{frameNumber},
+      #{makeNumber},#{licenseNumber},#{carColor},#{motorType},#{mintedDate},#{customersSum},#{sailNumber},#{carOwnername},#{vpDollar},#{placemanLength},#{mileage});
+    </insert>
+
+    <update id="updateWarranty" parameterType="Warranty">
+      update warranty_info set warrantyState=#{warrantyState} where warrantyNumber=#{warrantyNumber}
+    </update>
+>>>>>>> origin/master
 </mapper>
 

@@ -1,6 +1,5 @@
 package com.yyds.dao;
 
-import com.yyds.entity.Policyholders;
 import com.yyds.entity.Warranty;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -19,5 +18,14 @@ public interface WarrantyDao {
      *  根据用户提供的保单号查询保单信息
      */
     Warranty selectByWarrantyNumber(@Param("warrantyNumber") String warrantyNumber);
+    /*
+     *添加保单信息
+     */
+    int addWarranty(Warranty warranty);
+
+    /*
+     *修改保单信息
+     */
+    int updateWarranty(Warranty warranty);
 }
 

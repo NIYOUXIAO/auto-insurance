@@ -12,4 +12,13 @@ public interface WarrantyService {
     List<Warranty> selectwarranty();
 
     Warranty selectByWarrantyNumber(String warrantyNumber);
+    /*
+     *添加投保人信息
+     */
+    int addWarranty(Warranty warranty);
+
+    /*
+     *修改保单信息
+     */
+    int updateWarranty(Warranty warranty);
 }
