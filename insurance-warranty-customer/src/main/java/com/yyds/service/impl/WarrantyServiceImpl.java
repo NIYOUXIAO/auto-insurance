@@ -18,4 +18,14 @@ public class WarrantyServiceImpl implements WarrantyService {
     public List<Warranty> selectwarranty() {
         return warrantyDao.selectwarranty();
     }
+
+    @Override
+    public int addWarranty(Warranty warranty) {
+        return warrantyDao.addWarranty(warranty);
+    }
+
+    @Override
+    public int updateWarranty(Warranty warranty) {
+        return warrantyDao.updateWarranty(warranty);
+    }
 }

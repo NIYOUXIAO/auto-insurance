@@ -5,6 +5,7 @@ import com.yyds.entity.Warranty;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -16,4 +17,10 @@ public interface WarrantyClientService {
 
     @RequestMapping("/selectwarranty")
     List<Warranty> selectwarranty();
+
+    @RequestMapping("/addwarranty")
+    int addWarranty(Warranty warranty);
+
+    @RequestMapping("/updatewarranty")
+    int updateWarranty(Warranty warranty);
 }

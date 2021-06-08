@@ -6,6 +6,7 @@ import com.yyds.service.CustomerClientService;
 import com.yyds.service.WarrantyClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +22,15 @@ public class WarrantyController {
     @RequestMapping("/selectAll3")
     List<Warranty> selectwarranty(){
         return warrantyClientService.selectwarranty();
+    }
+
+    @PostMapping(value="/addWarr")
+    public int addWarranty(Warranty warranty){
+        return warrantyClientService.addWarranty(warranty);
+    }
+
+    @PostMapping (value="/updateWarr")
+    public int updateWarranty(Warranty warranty){
+        return warrantyClientService.updateWarranty(warranty);
     }
 }
