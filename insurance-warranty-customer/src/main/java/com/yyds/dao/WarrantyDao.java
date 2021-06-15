@@ -1,6 +1,9 @@
 package com.yyds.dao;
 
+<<<<<<< HEAD
 import com.yyds.entity.Recognizee;
+=======
+>>>>>>> origin/master
 import com.yyds.entity.Warranty;
 import com.yyds.entity.warrantytype;
 import org.apache.ibatis.annotations.Mapper;
@@ -27,10 +30,16 @@ public interface WarrantyDao {
     List<Warranty> selectwarranty();
 
     /*
+<<<<<<< HEAD
      *查询保单信息
      */
     List<Warranty> selectwarrantyone(@Param("recognizee") int recognizee);
 
+=======
+     *  根据用户提供的保单号查询保单信息
+     */
+    Warranty selectByWarrantyNumber(@Param("warrantyNumber") String warrantyNumber);
+>>>>>>> origin/master
     /*
      *添加保单信息
      */
@@ -51,3 +60,4 @@ public interface WarrantyDao {
      */
     int updateWarrantyxu(Warranty warranty);
 }
+

@@ -13,15 +13,16 @@ import java.util.Date;
 @Data
 public class ReportedInfo {
 
-    private Integer reportedNumber;
 
-    private Date reportedTime;
+    private Integer reported_number;
 
-    private Date caseTime;
+    private Date reported_time;
 
-    private Date dangerTime;
+    private Date case_time;
 
-    private String narrowlyLocation;
+    private Date danger_time;
+
+    private String narrowly_location;
 
     private String city;
 
@@ -29,23 +30,29 @@ public class ReportedInfo {
 
     private String road;
 
-    private String dangerAreaType;
+    private String danger_area_type;
 
-    private String dangerPass;
+    private String danger_pass;
 
-    private String dangerCause;
+    private String danger_cause;
 
     private String informants;
 
     private String driver;
 
-    private String driverMob;
+    private String driver_mob;
 
-    private Date endTime;
+    private Date end_time;
 
-    private Integer caseState;
+    private Integer case_state;
 
-    private String warrantyNumber;
+    private String warranty_number;
+
+    private WarrantyInfo warrantyInfo;
+
+    private int dispose_state;
+
+    private int dispatching_state;
 
 
 }

@@ -1,13 +1,15 @@
 package com.yyds.service;
 
+<<<<<<< HEAD
 import com.yyds.entity.Policyholders;
 import com.yyds.entity.Recognizee;
+=======
+>>>>>>> origin/master
 import com.yyds.entity.Warranty;
 import com.yyds.entity.warrantytype;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -30,6 +32,8 @@ public interface WarrantyClientService {
     @RequestMapping("/selectwarranty")
     List<Warranty> selectwarranty();
 
+    @RequestMapping("/getBywarrantyNumber")
+     Warranty getBywarrantyNumber(@RequestParam("warrantyNumber")  String warrantyNumber);
     @RequestMapping("/addwarranty")
     int addWarranty(Warranty warranty);
 

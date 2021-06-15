@@ -24,6 +24,7 @@ public class WarrantyController {
         return warrantyService.selectwarranty();
     }
 
+<<<<<<< HEAD
     @RequestMapping("/selectwarrantytype")
     public List<warrantytype> selectwarrantytype(String warrantyNumber){
         return warrantyService.selectwarrantytype(warrantyNumber);
@@ -34,6 +35,12 @@ public class WarrantyController {
         return warrantyService.selectwarrantyone(recognizee);
     }
 
+=======
+    @RequestMapping("/getBywarrantyNumber")
+    public Warranty getBywarrantyNumber(String warrantyNumber) {
+        return warrantyService.selectByWarrantyNumber(warrantyNumber);
+    }
+>>>>>>> origin/master
     @PostMapping(value = "/addwarranty")
     public int addWarranty(@RequestBody Warranty warranty){
         return warrantyService.addWarranty(warranty);

@@ -6,10 +6,16 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Component
 @FeignClient(value = "cloud-provider-users",path = "/users")
 public interface UserClientService {
 
     @RequestMapping("/login")
     Users userLogin(@RequestParam("username") String username,@RequestParam("userpassword") String userpassword);
+
+
+    @RequestMapping("/getAll")
+    List<Users> selectUserAll();
 }

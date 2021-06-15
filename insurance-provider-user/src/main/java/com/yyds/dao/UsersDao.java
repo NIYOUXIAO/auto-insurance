@@ -15,10 +15,14 @@ import java.util.List;
 @Mapper
 public interface UsersDao {
 
-  /*
-   *查询用户,用户登录
-   */
-    Users  selectUser(@Param("username") String username,@Param("userpassword") String userpassword);
+    /*
+     *查询用户,用户登录
+     */
+    Users selectUser(@Param("username") String username, @Param("userpassword") String userpassword);
 
+    /*
+     * 查询所有的用户
+     */
+    List<Users> selectUserAll();
 }
 

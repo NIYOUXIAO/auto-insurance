@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yyds.dao.WarrantyInfoDao">
+
+    <resultMap type="com.yyds.entity.WarrantyInfo" id="WarrantyInfoMap">
+        <result property="warrantyNumber" column="warrantyNumber" jdbcType="VARCHAR"/>
+        <result property="recognizee" column="recognizee" jdbcType="INTEGER"/>
+        <result property="permissionDate" column="permissionDate" jdbcType="TIMESTAMP"/>
+        <result property="insuranceBeginDate" column="insuranceBeginDate" jdbcType="TIMESTAMP"/>
+        <result property="insuranceEndDate" column="insuranceEndDate" jdbcType="TIMESTAMP"/>
+        <result property="paymentDate" column="paymentDate" jdbcType="TIMESTAMP"/>
+        <result property="premiumTotal" column="premiumTotal" jdbcType="INTEGER"/>
+        <result property="warrantyType" column="warrantyType" jdbcType="INTEGER"/>
+        <result property="warrantyState" column="warrantyState" jdbcType="INTEGER"/>
+        <result property="coverAgeNumber" column="coverAgeNumber" jdbcType="INTEGER"/>
+        <result property="coverAgeName" column="coverAgeName" jdbcType="VARCHAR"/>
+        <result property="premiumSum" column="premiumSum" jdbcType="INTEGER"/>
+        <result property="indemnifyMax" column="indemnifyMax" jdbcType="INTEGER"/>
+        <result property="indemnifyMax" column="indemnifyMax" jdbcType="INTEGER"/>
+        <result property="frameNumber" column="frameNumber" jdbcType="VARCHAR"/>
+        <result property="makeNumber" column="makeNumber" jdbcType="VARCHAR"/>
+        <result property="licenseNumber" column="licenseNumber" jdbcType="VARCHAR"/>
+        <result property="carColor" column="carColor" jdbcType="VARCHAR"/>
+        <result property="motorType" column="motorType" jdbcType="INTEGER"/>
+        <result property="mintedDate" column="mintedDate" jdbcType="TIMESTAMP"/>
+        <result property="customersSum" column="customersSum" jdbcType="INTEGER"/>
+        <result property="sailNumber" column="sailNumber" jdbcType="VARCHAR"/>
+        <result property="carOwner_name" column="carOwner_name" jdbcType="VARCHAR"/>
+        <result property="vpDollar" column="vpDollar" jdbcType="INTEGER"/>
+        <result property="placemanLength" column="placemanLength" jdbcType="INTEGER"/>
+        <result property="mileage" column="mileage" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="WarrantyInfoMap">
+        select * from autoinsurance.warranty_info
+        where  warrantyNumber = #{warrantyNumber}
+    </select>
+
+
+
+</mapper>
+

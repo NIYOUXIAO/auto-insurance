@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+
 @Service("warrantyService")
 public class WarrantyServiceImpl implements WarrantyService {
     @Resource
@@ -22,11 +23,18 @@ public class WarrantyServiceImpl implements WarrantyService {
     }
 
     @Override
+<<<<<<< HEAD
     public List<Warranty> selectwarrantyone(int recognizee) {
         return warrantyDao.selectwarrantyone(recognizee);
     }
 
     @Override
+=======
+    public Warranty selectByWarrantyNumber(String warrantyNumber) {
+        return warrantyDao.selectByWarrantyNumber(warrantyNumber);
+    }
+
+>>>>>>> origin/master
     public int addWarranty(Warranty warranty) {
         return warrantyDao.addWarranty(warranty);
     }

@@ -1,7 +1,10 @@
 package com.yyds.service;
 
+<<<<<<< HEAD
 import com.yyds.entity.Policyholders;
 import com.yyds.entity.Recognizee;
+=======
+>>>>>>> origin/master
 import com.yyds.entity.Warranty;
 import com.yyds.entity.warrantytype;
 
@@ -14,6 +17,7 @@ public interface WarrantyService {
      */
     List<Warranty> selectwarranty();
 
+    Warranty selectByWarrantyNumber(String warrantyNumber);
     /*
      *查询保单信息
      */

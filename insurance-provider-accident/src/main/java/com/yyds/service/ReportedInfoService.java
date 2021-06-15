@@ -1,6 +1,7 @@
 package com.yyds.service;
 
 import com.yyds.entity.ReportedInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -12,6 +13,16 @@ import java.util.List;
  */
 public interface ReportedInfoService {
 
+    List<ReportedInfo> selectAll();
+
     int addReportedInfo(ReportedInfo reportedInfo);
+
+    int updateReportedInfo(int reported_number,int case_state);
+
+    int updateReportedInfoDispose(@Param("reported_number") int reported_number, @Param("dispose_state") int dispose_state);
+
+    List<ReportedInfo> selectByDispatchingAll();
+
+    int updatePaigon(int reported_number);
 
 }

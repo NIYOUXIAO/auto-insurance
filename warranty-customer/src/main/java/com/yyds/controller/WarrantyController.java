@@ -1,12 +1,17 @@
 package com.yyds.controller;
 
+<<<<<<< HEAD
 import com.yyds.entity.Policyholders;
 import com.yyds.entity.Recognizee;
 import com.yyds.entity.Warranty;
 import com.yyds.entity.warrantytype;
 import com.yyds.service.CustomerClientService;
+=======
+import com.yyds.entity.Warranty;
+>>>>>>> origin/master
 import com.yyds.service.WarrantyClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,10 +37,11 @@ public class WarrantyController {
     }
 
     @RequestMapping("/selectAll3")
-    List<Warranty> selectwarranty(){
+    List<Warranty> selectwarranty() {
         return warrantyClientService.selectwarranty();
     }
 
+<<<<<<< HEAD
     @RequestMapping("/selectAllone")
     List<Warranty> selectwarrantyone(int recognizee){
         System.out.println(recognizee);
@@ -54,6 +60,20 @@ public class WarrantyController {
 
     @PostMapping (value="/updateWarr")
     public int updateWarranty(Warranty warranty){
+=======
+    @RequestMapping("/getBywarrantyNumber/{warrantyNumber}")
+    Warranty getBywarrantyNumber(@PathVariable String warrantyNumber) {
+        return warrantyClientService.getBywarrantyNumber(warrantyNumber);
+    }
+
+    @PostMapping(value = "/addWarr")
+    public int addWarranty(Warranty warranty) {
+        return warrantyClientService.addWarranty(warranty);
+    }
+
+    @PostMapping(value = "/updateWarr")
+    public int updateWarranty(Warranty warranty) {
+>>>>>>> origin/master
         return warrantyClientService.updateWarranty(warranty);
     }
 
