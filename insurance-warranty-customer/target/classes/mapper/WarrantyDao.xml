@@ -12,14 +12,34 @@
         select * from warranty_info;
     </select>
 
+    <select id="selectwarrantytype" parameterType="String" resultType="com.yyds.entity.warrantytype">
+        select * from warranty_type where warrantyNumber=#{warrantyNumber};
+    </select>
+
+    <select id="selectRecognizee" parameterType="String" resultType="com.yyds.entity.Recognizee">
+        select * from recognizee_info;
+    </select>
+
+    <select id="selectwarrantyone" resultType="com.yyds.entity.Warranty">
+        select * from warranty_info where recognizee=#{recognizee}
+    </select>
+
     <insert id="addWarranty" parameterType="Warranty">
       insert into warranty_info(warrantyNumber,recognizee,permissionDate,paymentDate,premiumTotal,warrantyType,insuranceBeginDate,insuranceEndDate,premiumSum,indemnifyMax,warrantyState,coverAgeNumber,engineNumber,frameNumber,makeNumber,licenseNumber,carColor,motorType,mintedDate,customersSum,sailNumber,carOwnername,vpDollar,placemanLength,mileage)
       VALUES(#{warrantyNumber},#{recognizee},#{permissionDate},#{paymentDate},#{premiumTotal},#{warrantyType},#{insuranceBeginDate},#{insuranceEndDate},#{premiumSum},#{indemnifyMax},#{warrantyState},#{coverAgeNumber},#{engineNumber},#{frameNumber},
       #{makeNumber},#{licenseNumber},#{carColor},#{motorType},#{mintedDate},#{customersSum},#{sailNumber},#{carOwnername},#{vpDollar},#{placemanLength},#{mileage});
     </insert>
 
+    <insert id="addWarrantytype" parameterType="warrantytype">
+      INSERT into warranty_type(coverAgeNumber,warrantyNumber,coverAgename,premiumSum,indemnifyMax) VALUE(#{coverAgeNumber},#{warrantyNumber},#{coverAgename},#{premiumSum},#{indemnifyMax});
+    </insert>
+
     <update id="updateWarranty" parameterType="Warranty">
       update warranty_info set warrantyState=#{warrantyState} where warrantyNumber=#{warrantyNumber}
-   </update>
+    </update>
+
+    <update id="updateWarrantyxu" parameterType="Warranty">
+      update warranty_info set insuranceBeginDate=#{insuranceBeginDate},insuranceEndDate=#{insuranceEndDate},warrantyType=#{warrantyType} where recognizee=#{recognizee}
+    </update>
 </mapper>
 

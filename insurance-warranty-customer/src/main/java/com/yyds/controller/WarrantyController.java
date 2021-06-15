@@ -1,7 +1,9 @@
 package com.yyds.controller;
 
 import com.yyds.entity.Policyholders;
+import com.yyds.entity.Recognizee;
 import com.yyds.entity.Warranty;
+import com.yyds.entity.warrantytype;
 import com.yyds.service.WarrantyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,13 +24,38 @@ public class WarrantyController {
         return warrantyService.selectwarranty();
     }
 
+    @RequestMapping("/selectwarrantytype")
+    public List<warrantytype> selectwarrantytype(String warrantyNumber){
+        return warrantyService.selectwarrantytype(warrantyNumber);
+    }
+
+    @RequestMapping("/selectwarrantyone")
+    public List<Warranty> selectwarrantyone(int recognizee){
+        return warrantyService.selectwarrantyone(recognizee);
+    }
+
     @PostMapping(value = "/addwarranty")
     public int addWarranty(@RequestBody Warranty warranty){
         return warrantyService.addWarranty(warranty);
     }
 
+    @PostMapping(value = "/addwarrantytype")
+    public int addWarrantytype(@RequestBody warrantytype warrantytype){
+        return warrantyService.addWarrantytype(warrantytype);
+    }
+
     @PostMapping(value = "/updatewarranty")
     public int updateWarranty(@RequestBody Warranty warranty){
         return warrantyService.updateWarranty(warranty);
+    }
+
+    @PostMapping(value = "/updatewarrantyxu")
+    public int updateWarrantyxu(@RequestBody Warranty warranty){
+        return warrantyService.updateWarrantyxu(warranty);
+    }
+
+    @RequestMapping("/selectrecognizee")
+    public List<Recognizee> selectRecognizee(){
+        return warrantyService.selectRecognizee();
     }
 }
